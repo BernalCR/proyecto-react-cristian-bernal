@@ -6,7 +6,7 @@ const NavBar = () => {
     <nav>
         <a id="logoNav" href="../index.html"><img src="../Resources/Gallery/logo.png" alt="logo de la marca"/></a>
         
-        <div class="right">
+        <div className="right">
             <ul id="navLinks">
                 <li><a href="./products.html">Productos</a></li>
                 <li><a href="./plans.html">Planes</a></li>
