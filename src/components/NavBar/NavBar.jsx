@@ -1,10 +1,11 @@
 import React from 'react'
 import CartWidget from '../CartWidget/CartWidget'
+import './NavBar.css'
 
 const NavBar = () => {
   return (
     <nav>
-        <a id="logoNav" href="../index.html"><img src="../Resources/Gallery/logo.png" alt="logo de la marca"/></a>
+        <a id="logoNav" href="../index.html"><img src="/logo.png" alt="logo de la marca"/></a>
         
         <div className="right">
             <ul id="navLinks">
