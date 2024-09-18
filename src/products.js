@@ -7,7 +7,7 @@ const misProductos = [
         bestSeller: true,
         id: 1,
         stock: 5,
-        category: "Alimento"
+        category: "alimento"
     },
     {
         name: "Pedigree High Protein Alimento Completo y Balanceado 4 Kg",
@@ -16,7 +16,7 @@ const misProductos = [
         bestSeller: true,
         id: 2,
         stock: 5,
-        category: "Alimento"
+        category: "alimento"
     },
     {
         name: "BR for CAT Bombonera para gatos reduce bolas de pelo 350 gr",
@@ -25,7 +25,7 @@ const misProductos = [
         bestSeller: true,
         id: 5,
         stock: 5,
-        category: "Snacks"
+        category: "snacks"
     },
     {
         name: "Churu Snack Receta de Atún con Salmón x 4 Unds 14 g  (Rosa)",
@@ -33,7 +33,7 @@ const misProductos = [
         img: "./Gallery/churu-atun-salmon-4-14gr.jpg",
         id: 6,
         stock: 5,
-        category: "Snacks"
+        category: "snacks"
     },
 ]
 
@@ -63,7 +63,7 @@ export const getUnProducto = (id) => {
 export const getProductosPorCategorias = (idCategoria) => {
     return new Promise(resolve =>{
         setTimeout(() => {
-            const producto = misProductos.filter(item => item.idCat === idCategoria)
+            const producto = misProductos.filter(item => item.category === idCategoria)
             resolve(producto)
         }, 100);
 
