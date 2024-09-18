@@ -14,7 +14,6 @@ const ItemList = ({productos}) => {
           <Link to={`/item/${id}`}>Ver Detalles</Link>
         </div>
       ))}
-        {/* {productos.map(item => <Item key={item.id} {...item} /> )} */}
     </div>
   )
 }
