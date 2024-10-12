@@ -3,14 +3,19 @@ import React from 'react'
 import Contador from '../Contador/Contador'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import { CartContext } from '../../context/CartContext'
+import { useContext } from 'react'
 
 const ItemDetail = ({id, name, price, img, stock}) => {
-  const [agregarCantidad, setAgregarCantidad] = useState(0)
+  const [quantity, setQuantity] = useState(0)
+  const { addItem } = useContext(CartContext);
 
-  const manejadorCantidad = (cantidad) => {
-    setAgregarCantidad(cantidad);
-    console.log("Productos agregador:" + cantidad)
+  const handlerQuantity = (quantity) => {
+    setQuantity(quantity);
+    console.log("Productos agregador:" + quantity)
+
+    const item = { id, name, price }
+    addItem(item, quantity);
   }
 
   return (
@@ -22,7 +27,7 @@ const ItemDetail = ({id, name, price, img, stock}) => {
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia, labore. Facilis commodi harum eligendi eum amet quia nesciunt asperiores. Quibusdam voluptates assumenda ipsam magni dignissimos totam ex culpa maiores atque?</p>
 
         {
-          agregarCantidad > 0 ? (<Link to="/cart"> Terminar Compra</Link>) : (<Contador inicial={1} stock={stock} funcionAgregar={manejadorCantidad}/>)
+          quantity > 0 ? (<Link to="/cart"> Terminar Compra</Link>) : (<Contador inicial={1} stock={stock} funcionAgregar={handlerQuantity}/>)
         }
 
     </div>
