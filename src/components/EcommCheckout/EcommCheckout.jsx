@@ -1,7 +1,9 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { CartContext } from '../../context/CartContext';
 import { db } from "../../services/config"
 import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore"
+import { useNavigate } from 'react-router-dom';
+import Swal from "sweetalert2";
 
 const EcommCheckout = () => {
     const [name, setName] = useState("");
@@ -13,6 +15,22 @@ const EcommCheckout = () => {
     const [orderId, setOrderId] = useState("");
   
     const {cart, emptyCart, totalPrice} = useContext(CartContext)
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (orderId) {
+            Swal.fire({
+                title: "¡Gracias por tu compra!",
+                text: "Tu número de orden es: " + orderId,
+                icon: "success",
+                confirmButtonColor: "#44aa44",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/');
+                }
+            });
+        }
+    }, [orderId]);  // Ejecutar cuando cambie orderId
 
     const handlerForm = (e) =>{
         e.preventDefault()
@@ -114,9 +132,8 @@ const EcommCheckout = () => {
                 <input type="email" onChange={(e)=>setEmailConfirmation(e.target.value)} value={emailConfirmation}/>
             </div>
             <button type="submit">Confirmar Compra</button>
-
+            
             { error && <p style={{color:"red"}}> {error}</p> }
-            { orderId && ( <strong>¡Gracias por tu compra! Tu numero de orden es: {orderId}</strong> ) }
         </form>
     )
 }

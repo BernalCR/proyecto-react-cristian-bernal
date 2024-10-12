@@ -1,4 +1,5 @@
 import { useState, createContext } from "react";
+import Swal from "sweetalert2";
 
 export const CartContext = createContext({
     cart: [],
@@ -38,13 +39,28 @@ export const CartProvider = ({children}) =>{
         setTotalPrice(prev => prev - deletedItem.quantity * deletedItem.item.price)
         setTotalItems(prev => prev - deletedItem.quantity)
     }
-
+    let xx = 1;
     const emptyCart = () =>{
-        // falta un swal
-
-        setCart([])
-        setTotalPrice(0)
-        setTotalItems(0)
+        Swal.fire({
+            title: "¿Estás seguro?",
+            text: "Una vez eliminado tendrás que seleccionar todos nuevamente",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#44aa44",
+            cancelButtonColor: "#7b7b7b",
+            confirmButtonText: "Si, estoy seguro!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Eliminados",
+                    text: "Tus productos fueron eliminados del carrito",
+                    icon: "success",
+                });
+                setCart([])
+                setTotalPrice(0)
+                setTotalItems(0)
+            }
+        }) 
     }
 
 
