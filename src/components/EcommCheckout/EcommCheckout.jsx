@@ -3,7 +3,7 @@ import { CartContext } from '../../context/CartContext';
 import { db } from "../../services/config"
 import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore"
 
-const Checkout = () => {
+const EcommCheckout = () => {
     const [name, setName] = useState("");
     const [lastName, setLastName] = useState("");
     const [phone, setPhone] = useState("");
@@ -121,4 +121,4 @@ const Checkout = () => {
     )
 }
 
-export default Checkout
+export default EcommCheckout
