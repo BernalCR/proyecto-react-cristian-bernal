@@ -25,9 +25,7 @@ const EcommCheckout = () => {
                 icon: "success",
                 confirmButtonColor: "#44aa44",
             }).then((result) => {
-                if (result.isConfirmed) {
-                    navigate('/');
-                }
+                if (result.isConfirmed) navigate('/');
             });
         }
     }, [orderId]);  // Ejecutar cuando cambie orderId

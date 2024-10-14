@@ -1,0 +1,23 @@
+section{ margin-bottom: var(--maginSections); }
+.banner{
+    width: 100%;
+    object-fit: cover;
+    height: clamp(45rem, 45vw, 50rem);
+}
+
+.brands_box{
+    display: flex;
+    justify-content: center;
+}
+
+.brands_box img{
+    min-width: 1%;
+    width: clamp(100px, 19vw, 150px);
+}
+
+h1, h2{ text-align: center; }
+h1{ margin-bottom: 3rem; }
+
+
+html{ font-size: 62.5%; }
+body{ font-size: 16px; }

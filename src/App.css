@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* <weight>: Use a value from 100 to 900
+font-family: "Montserrat", sans-serif; italic 0 - 1
+<weight>: Use a value from 300 to 800
+font-family: "Hind", sans-serif; */
+
+body *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{ font-size: 62.5%; }
+body{ font-size: 16px; }
+
+:root {
+    --green: #44aa44;
+    --maginSections: 7rem;
+}
+
+h1, h2, h3{ 
+    font-family: "Montserrat", sans-serif; 
+    letter-spacing: -1px;
+    font-weight: 500;
+}
+p, a, li{ font-family: "Hind", sans-serif; }
+h1{ font-size: clamp(3rem,4vw,4.5rem); color: var(--green);}
+h2{ font-size: clamp(2.8rem,4vw,3.8rem); color: var(--green)}
+h3{ font-size: clamp(1.8rem, 2.2vw, 2rem); }
+
+.box_container{ 
+    width: 80%;
+    margin: auto;
+    padding: 0;
+    max-width: 1200px;
+ }
+@media (max-width: 950px){
+    .box_container{ width: 90%; }
+}
+
+.col_4_big{ grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1250px){
+    .col_3_large{ grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 950px){
+    .col_2_medium{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 580px){
+    .col_1_small{ grid-template-columns: repeat(1, 1fr); }
+}

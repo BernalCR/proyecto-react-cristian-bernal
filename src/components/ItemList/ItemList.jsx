@@ -1,17 +1,19 @@
 
 // import './ItemList.css';
 import { Link } from 'react-router-dom';
+import "./ItemList.css"
 
 const ItemList = ({productos}) => {
   return (
-    <div className="contenedorProductos">
+    <div className="cardContainer col_4_big col_3_large col_2_medium col_1_small">
       {productos.map(({ id, img, name, price }) => (
-        <div className='cardProducto' key={id}>
+        <div className='productCard' key={id}>
           <img src={img} alt={name} />
-          <h3>Nombre: {name}</h3>
-          <p>Precio: {price}</p>
-          <p>ID: {id}</p>
-          <Link to={`/item/${id}`}>Ver Detalles</Link>
+          <div className='txtBox_card'> 
+            <h3>{name}</h3>
+            <p className='price_card'>$ {price}</p>
+            <Link to={`/item/${id}`}>Ver Detalles</Link>
+          </div>
         </div>
       ))}
     </div>

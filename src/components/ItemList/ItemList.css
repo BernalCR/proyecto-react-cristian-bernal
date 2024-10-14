@@ -1,0 +1,43 @@
+.cardContainer{
+    display: grid;
+    gap: 3vw;
+    padding-top: 2.5rem;
+}
+
+.productCard{
+    border: 1px solid #16423C;
+    display: flex;
+    flex-direction: column;
+}
+.productCard img{
+    margin: auto;
+    display: block;
+}
+.txtBox_card{
+    padding: 2rem;
+}
+.txtBox_card h3{
+    font-size: 1.7rem;
+}
+.txtBox_card a{
+    border: 2px solid transparent;
+    background-color: #16423C;
+    margin: auto;
+    display: block;
+    width: fit-content;
+    padding: .5rem 2rem;
+    border-radius: 2rem;
+    color: #fff;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+.txtBox_card a:hover{
+    border: 2px solid #16423C;
+    background-color: transparent;
+    color: #16423C;
+}
+
+.txtBox_card .price_card,
+.txtBox_card a{
+    margin-top: 1rem;
+}
