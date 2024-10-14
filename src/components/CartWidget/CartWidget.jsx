@@ -7,13 +7,11 @@ const CartWidget = () => {
   const{ totalItems } = useContext(CartContext)
 
   return (
-    <Link to="/cart">
-    <div id="header__cart_box">
+    <Link id='header__cart_box' to="/cart">
       <img className="cart_icon" src="https://img.icons8.com/?size=100&id=j3XI41kBOIXY&format=png&color=FFFFFF" alt="shop cart icon"/>
       {
           totalItems > 0 ? <span>{totalItems}</span> : 0
       }
-    </div> 
     </Link>
   )
 }

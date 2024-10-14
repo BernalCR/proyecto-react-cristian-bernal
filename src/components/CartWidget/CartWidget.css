@@ -2,6 +2,11 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    color: #fff;
+    text-decoration: none;
 }
-#header__cart_box img { width: 1.5em; }
+#header__cart_box img { 
+    width: 1.5em; 
+    margin-right: .5rem;
+}
   

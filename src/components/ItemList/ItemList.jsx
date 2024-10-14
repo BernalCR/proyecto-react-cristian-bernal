@@ -7,14 +7,14 @@ const ItemList = ({productos}) => {
   return (
     <div className="cardContainer col_4_big col_3_large col_2_medium col_1_small">
       {productos.map(({ id, img, name, price }) => (
-        <div className='productCard' key={id}>
+        <Link to={`/item/${id}`} className='productCard' key={id}>
           <img src={img} alt={name} />
           <div className='txtBox_card'> 
             <h3>{name}</h3>
             <p className='price_card'>$ {price}</p>
-            <Link to={`/item/${id}`}>Ver Detalles</Link>
+            <p>Ver Detalles</p>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   )
