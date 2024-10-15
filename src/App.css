@@ -38,6 +38,8 @@ h3{ font-size: clamp(1.8rem, 2.2vw, 2rem); }
     .box_container{ width: 90%; }
 }
 
+.txt_center{ text-align: center; }
+
 .col_4_big{ grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 1250px){
     .col_3_large{ grid-template-columns: repeat(3, 1fr); }

@@ -92,18 +92,30 @@ const EcommCheckout = () => {
 
 
     return (
-        <form onSubmit={handlerForm}>
-            <legend> Checkout:</legend>
-            {   
-                cart.map(product => (
-                    <div key={product.item.id}>
-                        <p>{product.item.name}</p>
-                        <p>{product.item.price} x {product.quantity}</p>
-                        <p>{product.item.price}</p>
-                        <hr />
-                    </div>
-                ))
-            }
+        <form className='box_container' onSubmit={handlerForm}>
+            <div style={{margin: "var(--maginSections) 0"}}>
+                <legend> Checkout:</legend>
+
+                <div className='itemRow head'>
+                    <p>Nombre</p>
+                    <span></span>
+                    <p>Precio</p>
+                    <span></span>
+                    <p>cantidad</p>
+                </div>
+                {   
+                    cart.map(product => (
+                        <div className='itemRow' key={product.item.id}>
+                            <p>{product.item.name}</p>
+                            <span></span>
+                            <p>{product.item.price} x {product.quantity}</p>
+                            <span></span>
+                            <p>{product.item.price}</p>
+                            <hr />
+                        </div>
+                    ))
+                }
+            </div>
 
             <div>
                  <label htmlFor=""> Nombre </label>

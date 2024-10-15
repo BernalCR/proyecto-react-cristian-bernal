@@ -15,9 +15,5 @@ section{ margin-bottom: var(--maginSections); }
     width: clamp(100px, 19vw, 150px);
 }
 
-h1, h2{ text-align: center; }
-h1{ margin-bottom: 3rem; }
-
-
 html{ font-size: 62.5%; }
 body{ font-size: 16px; }

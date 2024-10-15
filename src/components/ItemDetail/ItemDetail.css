@@ -1,0 +1,7 @@
+.ecommContainer img{
+    display: block;
+    margin: auto;
+    margin-top: var(--maginSections);
+    object-fit: cover;
+    min-width: min(50vw, 30rem);
+}

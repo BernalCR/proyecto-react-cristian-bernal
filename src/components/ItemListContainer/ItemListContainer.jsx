@@ -29,7 +29,7 @@ const ItemListContainer = () => {
             <section><img className="banner" src="/Gallery/mathew-coulton-zxqaAkkayP8-unsplash.jpg"/></section>
             <main className="box_container">
                 <section>
-                    <h1 className="txt_center">Las mejores marcas para tu mascota</h1>
+                    <h1 style={{marginBottom: "3rem"}} className="txt_center">Las mejores marcas para tu mascota</h1>
                     <div className="brands_box">
                         <img src="/Gallery/pro-plan-min.jpg" alt="Logo de pro plan"/>
                         <img src="/Gallery/pedigree_ed-min.jpg" alt="Logo de pedigree"/>
@@ -44,7 +44,7 @@ const ItemListContainer = () => {
                 </section>
 
                 <section>
-                    <h2>Mis Productos</h2>
+                    <h2 className="txt_center">Mis Productos</h2>
                     <ItemList productos={products} />
                 </section>
             </main>

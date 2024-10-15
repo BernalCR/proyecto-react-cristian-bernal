@@ -12,15 +12,15 @@ const Contador = ({inicial, stock, funcionAgregar}) => {
     }
 
   return (
-    <>
-        <div>
+    <div className="counterBox">
+        <div style={{marginTop: "2rem"}}>
             <button onClick={restarContador}> - </button>
             <strong>{contador}</strong>
             <button onClick={sumarContador}> + </button>
         </div>
 
-        <button onClick={()=>funcionAgregar(contador)}> Agregar al carrito</button>
-    </>
+        <button style={{marginTop: "2rem"}} onClick={()=>funcionAgregar(contador)}> Agregar al carrito</button>
+    </div>
   )
 }
 
