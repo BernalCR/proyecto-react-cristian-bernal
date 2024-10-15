@@ -108,10 +108,9 @@ const EcommCheckout = () => {
                         <div className='itemRow' key={product.item.id}>
                             <p>{product.item.name}</p>
                             <span></span>
-                            <p>{product.item.price} x {product.quantity}</p>
+                            <p>$ {product.item.price}</p>
                             <span></span>
-                            <p>{product.item.price}</p>
-                            <hr />
+                            <p>{product.quantity}</p>
                         </div>
                     ))
                 }

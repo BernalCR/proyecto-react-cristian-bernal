@@ -33,13 +33,13 @@ export const CartProvider = ({children}) =>{
 
     const deleteItem = (id) =>{
         const deletedItem = cart.find(prod => prod.item.id === id);
-        const updatedCart = cart.filter(prod => prod.item.id !== item.id);
+        const updatedCart = cart.filter(prod => prod.item.id !== id);
 
         setCart(updatedCart)
         setTotalPrice(prev => prev - deletedItem.quantity * deletedItem.item.price)
         setTotalItems(prev => prev - deletedItem.quantity)
     }
-    let xx = 1;
+
     const emptyCart = () =>{
         Swal.fire({
             title: "¿Estás seguro?",

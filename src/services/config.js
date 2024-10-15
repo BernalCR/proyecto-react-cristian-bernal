@@ -76,7 +76,6 @@ const myProducts = [
       name: "Hueso Juguete comestible paleta de cerdo",
       price: 5.5,
       img: "/Gallery/hueso-juguete-paleta-de-cerdo.jpg",
-      id: 9,
       stock: 10,
       category: "juguetes"
   },
