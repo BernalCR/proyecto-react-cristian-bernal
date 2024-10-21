@@ -8,17 +8,14 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 # Librerías usadas
 
-Firebase
+## Firebase
 https://console.firebase.google.com/
-
-## npm i firebase
-
+npm i firebase
 Se uso para la base de datos y autenticación
 
-sweetalert2
+## sweetalert2
 https://sweetalert2.github.io/
-## npm install sweetalert2
-
+npm install sweetalert2
 Se uso para los pop ups
 
 
