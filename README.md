@@ -1,12 +1,10 @@
+# Proyecto final React CODERHOUSE
+Para iniciar
+npm install
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-## Proyecto final React CODERHOUSE
-
-# Proyecto realizado con React
-Para iniciar
-npm install
 
 # Librerías usadas
 
