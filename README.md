@@ -15,8 +15,6 @@ https://console.firebase.google.com/
 
 Se uso para la base de datos y autenticación
 
----
-
 sweetalert2
 https://sweetalert2.github.io/
 ## npm install sweetalert2
