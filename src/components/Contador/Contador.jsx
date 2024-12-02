@@ -1,26 +1,29 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import "./Contador.css"
 
-const Contador = ({inicial, stock, funcionAgregar}) => {
-    const [contador, setContador] = useState(inicial)
+const Contador = ({min, stock, funcionAgregar, start}) => {
+    const initialValue = start ?? min;
+    const [contador, setContador] = useState(initialValue);
 
     const sumarContador = () => {
-        if (contador < stock) setContador(contador +1)
-    }
+        setContador((prev) => (prev < stock ? prev + 1 : prev));
+    };
 
     const restarContador = () => {
-        if ( contador > inicial)  setContador (contador - 1)
-    }
+        setContador((prev) => (prev > min ? prev - 1 : prev));
+    };
+
+    // Llama a funcionAgregar cada vez que el contador cambie
+    useEffect(() => {
+        funcionAgregar(contador);
+    }, [contador]);
 
   return (
-    <div className="counterBox">
-        <div style={{marginTop: "2rem"}}>
+        <div id="counterBox">
             <button onClick={restarContador}> - </button>
-            <strong>{contador}</strong>
+            <span>{contador}</span>
             <button onClick={sumarContador}> + </button>
         </div>
-
-        <button style={{marginTop: "2rem"}} onClick={()=>funcionAgregar(contador)}> Agregar al carrito</button>
-    </div>
   )
 }
 

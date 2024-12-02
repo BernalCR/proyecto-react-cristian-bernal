@@ -4,6 +4,7 @@ import { db } from "../../services/config"
 import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore"
 import { useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2";
+import "./EcommCheckout.css"
 
 const EcommCheckout = () => {
     const [name, setName] = useState("");
@@ -92,16 +93,16 @@ const EcommCheckout = () => {
 
 
     return (
-        <form className='box_container' onSubmit={handlerForm}>
-            <div style={{margin: "var(--maginSections) 0"}}>
-                <legend> Checkout:</legend>
+        <>
+            <div className='box_container' style={{margin: "var(--maginSections) auto"}}>
+                <h2> Checkout:</h2>
 
                 <div className='itemRow head'>
-                    <p>Nombre</p>
+                    <p><strong>Nombre</strong></p>
                     <span></span>
-                    <p>Precio</p>
+                    <p><strong>Precio</strong></p>
                     <span></span>
-                    <p>cantidad</p>
+                    <p><strong>cantidad</strong></p>
                 </div>
                 {   
                     cart.map(product => (
@@ -116,35 +117,40 @@ const EcommCheckout = () => {
                 }
             </div>
 
-            <div>
-                 <label htmlFor=""> Nombre </label>
-                 <input type="text" onChange={(e)=>setName(e.target.value)} value={name} />                
-            </div>
+            <form className='box_container' onSubmit={handlerForm}>
+                <div>
+                    <label htmlFor=""> Nombre </label>
+                    <input type="text" onChange={(e)=>setName(e.target.value)} value={name} />                
+                </div>
 
-            <div>
-                <label htmlFor=""> Apellido </label> 
-                <input type="text" onChange={(e)=>setLastName(e.target.value)} value={lastName} /> 
-            </div>
+                <div>
+                    <label htmlFor=""> Apellido </label> 
+                    <input type="text" onChange={(e)=>setLastName(e.target.value)} value={lastName} /> 
+                </div>
 
-            <div>
-                <label htmlFor=""> Telefono </label> 
-                <input type="text" onChange={(e)=>setPhone(e.target.value)} value={phone} /> 
-            </div>
+                <div>
+                    <label htmlFor=""> Telefono </label> 
+                    <input type="text" onChange={(e)=>setPhone(e.target.value)} value={phone} /> 
+                </div>
 
-            <div>
-                <label htmlFor=""> Email </label> 
-                <input type="email" onChange={(e)=>setEmail(e.target.value)} value={email} />
-            </div>
+                <div>
+                    <label htmlFor=""> Email </label> 
+                    <input type="email" onChange={(e)=>setEmail(e.target.value)} value={email} />
+                </div>
 
-            <div>
-                <label htmlFor=""> Email Confirmacion </label> 
-                <input type="email" onChange={(e)=>setEmailConfirmation(e.target.value)} value={emailConfirmation}/>
-            </div>
-            <button type="submit">Confirmar Compra</button>
-            
-            { error && <p style={{color:"red"}}> {error}</p> }
-        </form>
+                <div>
+                    <label htmlFor=""> Email Confirmacion </label> 
+                    <input type="email" onChange={(e)=>setEmailConfirmation(e.target.value)} value={emailConfirmation}/>
+                </div>
+                <button type="submit">Confirmar Compra</button>
+                
+                { error && <p style={{color:"red"}}> {error}</p> }
+            </form>
+        </>
     )
 }
 
 export default EcommCheckout
+
+
+

@@ -4,7 +4,7 @@ nav {
   padding: 1.5rem 5%;
   position: sticky;
   top: 0;
-  background-color: #44aa44;
+  background-color: var(--green);
   z-index: 10;
 }
 

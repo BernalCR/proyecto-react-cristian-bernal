@@ -1,10 +1,17 @@
 import React, { useContext } from 'react'
+import { useState } from 'react'
 import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
 import './Cart.css'
+import Contador from '../Contador/Contador'
 
 const Cart = () => {
     const { cart, totalPrice, totalItems, emptyCart, deleteItem} = useContext(CartContext)
+    const [quantity, setQuantity] = useState(0);
+
+    const handlerQuantity = (quantity) => {
+        setQuantity(quantity);
+    }
 
     if(totalItems === 0 ){
         return(
@@ -18,32 +25,39 @@ const Cart = () => {
     return (
         <div className='box_container' style={{marginTop: "var(--maginSections)"}}>
             <div className='itemRow head'>
-                <p>Nombre</p>
+                <p><strong>Nombre</strong></p>
                 <span></span>
-                <p>Precio</p>
+                <p><strong>Precio</strong></p>
                 <span></span>
-                <p>cantidad</p>
+                <p><strong>cantidad</strong></p>
                 <span></span>
-                <p>Delete Item</p>
+                <p><strong>Delete Item</strong></p>
             </div>
+
             {
-                cart.map(({ item: { id, name, price }, quantity }) => (
+                cart.map(({ item: { id, name, price, stock }, quantity }) => (
                     <div className='itemRow' key={id}>
                         <p>{name}</p>
                         <span></span>
                         <p>$ {price}</p>
                         <span></span>
-                        <p>{quantity}</p>
+                        <div>
+                            <Contador min={1} stock={stock} funcionAgregar={handlerQuantity} start={quantity}/>
+                        </div>
+                        {/* <p>{quantity}</p> */}
                         <span></span>
-                        <button onClick={() => deleteItem(id)}>Eliminar</button>
+                        <div>
+                            <button className='classicBtn' onClick={() => deleteItem(id)}>Eliminar</button>
+                        </div>
                     </div>
                 ))
             }
         
             <h2 style={{marginTop: "var(--maginSections)"}}>Precio total: ${totalPrice}</h2>
             <h2>Cantidad de items: {totalItems}</h2>
-            <button style={{marginTop: "2rem"}} onClick={() => emptyCart()}>Vaciar Carrito</button>
-            <Link to="/checkout">Finalizar compra</Link>
+    
+            <Link className='classicBtn' style={{marginTop: "4rem"}} to="/checkout">Finalizar compra</Link>
+            <button className='trashBtn' style={{marginTop: "2rem"}} onClick={() => emptyCart()}>Vaciar Carrito</button>
         </div>
     )
 }

@@ -1,0 +1,26 @@
+#counterBox{
+    width: fit-content;
+    margin: auto;
+    border-radius: 4rem;
+    background-color: #f0f0f0;
+}
+
+#counterBox span{
+    padding: 0 1rem;
+}
+
+#counterBox button{
+    cursor: pointer;
+    padding: 1.7rem;
+    height: 0;
+    width: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4rem;
+    border: none;
+    transition: background-color 0.2s ease-in-out;
+}
+#counterBox button:hover{
+    background-color: #d5d5d5;
+}

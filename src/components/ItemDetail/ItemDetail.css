@@ -1,7 +1,18 @@
+.ecommContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .ecommContainer img{
     display: block;
     margin: auto;
     margin-top: var(--maginSections);
     object-fit: cover;
     min-width: min(50vw, 30rem);
+    width: 40%;
+}
+
+.ecommContainer > div{
+    width: 58%;
 }
