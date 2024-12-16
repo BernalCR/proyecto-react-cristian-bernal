@@ -12,18 +12,11 @@ const ItemDetail = ({id, name, price, img, stock}) => {
   const [added, setAdded] = useState(false)
   const { addItem } = useContext(CartContext);
 
-  const handlerQuantity = (quantityy) => {
-    setQuantity(quantityy);
-
-    console.log("quantityy")
-    console.log(quantityy)
-    console.log("quantity")
-    console.log(quantity)
+  const handlerQuantity = (count) => {
+    setQuantity(count);
   }
 
   const addToCart = () =>{
-    console.log("add to cart: " + quantity)
-    console.log(quantity)
     const item = { id, name, price, stock }
     addItem(item, quantity);
     setAdded(true);

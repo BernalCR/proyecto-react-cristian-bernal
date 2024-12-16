@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import "./Contador.css"
 
-const Contador = ({min, stock, funcionAgregar, start}) => {
+const Contador = ({min, stock, funcionAgregar, start, idItem}) => {
     const initialValue = start ?? min;
     const [contador, setContador] = useState(initialValue);
 
@@ -15,7 +15,7 @@ const Contador = ({min, stock, funcionAgregar, start}) => {
 
     // Llama a funcionAgregar cada vez que el contador cambie
     useEffect(() => {
-        funcionAgregar(contador);
+        funcionAgregar(contador, idItem);
     }, [contador]);
 
   return (

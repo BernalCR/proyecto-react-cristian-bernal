@@ -6,11 +6,12 @@ import './Cart.css'
 import Contador from '../Contador/Contador'
 
 const Cart = () => {
-    const { cart, totalPrice, totalItems, emptyCart, deleteItem} = useContext(CartContext)
+    const { cart, totalPrice, totalItems, emptyCart, deleteItem, updateItem} = useContext(CartContext)
     const [quantity, setQuantity] = useState(0);
 
-    const handlerQuantity = (quantity) => {
+    const handlerQuantity = (quantity, id) => {
         setQuantity(quantity);
+        updateItem(quantity, id)
     }
 
     if(totalItems === 0 ){
@@ -42,9 +43,8 @@ const Cart = () => {
                         <p>$ {price}</p>
                         <span></span>
                         <div>
-                            <Contador min={1} stock={stock} funcionAgregar={handlerQuantity} start={quantity}/>
+                            <Contador min={1} stock={stock} funcionAgregar={handlerQuantity} start={quantity} idItem = {id}/>
                         </div>
-                        {/* <p>{quantity}</p> */}
                         <span></span>
                         <div>
                             <button className='classicBtn' onClick={() => deleteItem(id)}>Eliminar</button>

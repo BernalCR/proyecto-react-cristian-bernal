@@ -12,6 +12,14 @@ export const CartProvider = ({children}) =>{
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalItems, setTotalItems] = useState(0);
 
+    const updateItem = (quantity, id) =>{
+        const prod = cart.find(prod => prod.item.id === id);
+        const diff = quantity - prod.quantity
+        prod.quantity = quantity;
+        
+        setTotalItems(prev => prev + diff)
+    } 
+
     const addItem = (item, quantity) =>{
         const isAdded = cart.find(prod => prod.item.id === item.id);
 
@@ -70,6 +78,7 @@ export const CartProvider = ({children}) =>{
           cart,
           totalPrice,
           totalItems,
+          updateItem,
           addItem,
           deleteItem,
           emptyCart,

@@ -48,7 +48,7 @@ h1, h2, h3{
     letter-spacing: -1px;
     font-weight: 500;
 }
-p, a, li{ font-family: "Hind", sans-serif; }
+p, a, li, label{ font-family: "Hind", sans-serif; }
 h1{ font-size: clamp(3rem,4vw,4.5rem); color: var(--green);}
 h2{ font-size: clamp(2.8rem,4vw,3.8rem); color: var(--green)}
 h3{ font-size: clamp(1.8rem, 2.2vw, 2rem); }
